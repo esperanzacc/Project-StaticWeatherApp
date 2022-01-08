@@ -40,15 +40,15 @@ class CityViewController: UIViewController {
         detailCL.selectedTemp = city.temp
         detailCL.selectedSum = city.summary
         detailCL.selectedFlag = city.flag
-        let item =  UIBarButtonItem (title: city.icon.upperCasedOfFirstLetter() , style: .plain, target:  self , action:  nil )
+        let item =  UIBarButtonItem (title: city.icon.upperCasedOfFirstLetter , style: .plain, target:  self , action:  nil )
         self.navigationItem.backBarButtonItem = item
         self.navigationController?.pushViewController(detailCL, animated: true)
     }
     }
 
     extension String {
-        func upperCasedOfFirstLetter()-> String {
-            return prefix(1).capitalized + dropFirst()
+        var upperCasedOfFirstLetter: String {
+            return self.prefix(1).capitalized + dropFirst()
         
         }
 }
